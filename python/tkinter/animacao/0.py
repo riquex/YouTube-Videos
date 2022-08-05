@@ -8,7 +8,7 @@ from math import sin
 from math import pi
 
 
-class X(tk.Frame):
+class X(Frame):
     def __init__(self, master, tamanho: int, *args, **kwargs):
         super().__init__(master, *args, **kwargs)
 
@@ -17,7 +17,7 @@ class X(tk.Frame):
         self.terminado = False
         self.velocidade = pi/100
 
-        self._canvas = tk.Canvas(master, height=tamanho, width=tamanho)
+        self._canvas = Canvas(master, height=tamanho, width=tamanho)
         self._canvas.pack()
         self._x = self._canvas.create_polygon(self._pontos(), fill='red', outline='black')
         self._taxa: float = .0
@@ -77,7 +77,7 @@ class X(tk.Frame):
 
 
 if __name__ == '__main__':
-    root = tk.Tk()
+    root = Tk()
     app = X(root, 400)
     app.pack()
     app.animar()
